@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Generation API</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+        h1 { text-align: center; }
+        form { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; resize: vertical; }
+        .result-container { border: 1px solid #ccc; padding: 15px; margin-top: 20px; }
+        .svg-container { border: 1px solid #000; padding: 10px; text-align: center; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>SVG Generation API</h1>
+    
+    <form action="/predict" method="post">
+        <p>Please enter input text:</p>
+        <textarea name="user_text" placeholder="example: a golden triangle with sparks." required>{{ user_text }}</textarea><br><br>
+        <button type="submit">Generate SVG</button>
+    </form>
+    
+    {% if svg_output_1 and svg_output_2 %}
+    <hr>
+    <h2>Results</h2>
+    <p>Below are two different generation results. You may select the one you like.</p>
+    <div class="result-grid">
+        <div class="result-container">
+            <h3>1.</h3>
+            <div class="svg-container">
+                {{svg_output_1 | safe}}
+            </div>
+            <br>
+            <h4>Original SVG code</h4>
+            <pre>{{svg_output_1}}</pre>
+        </div>
+        <div class="result-container">
+            <h3>2.</h3>
+            <div class="svg-container">
+                {{svg_output_2 | safe}}
+            </div>
+            <br>
+            <h4>Original SVG code</h4>
+            <pre>{{svg_output_2}}</pre>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
