@@ -16,7 +16,7 @@ Now the necessary packages are installed. <br>
 ### Evaluation <br>
 The metric we choose is perplexity, which essentially measures how many candidate tokens the model is choosing between. We use this because it evaluates the model's core ability to understand the task (mapping descriptions to SVG syntax). The lower the perplexity score is, the better it is at predicting the next token in a sequence. The model perplexity is 3.3636 on the test dataset, indicating that the model is quite confident in choosing the next token with the SVG's "grammar". While this indicated successful training, this model's perplexity of 3.x was higher than the perplexity of 2.x achieved by my teammates' models (Tiny Llama and Llama 3). <br>
 Despite the higher perplexity, the fine-tuned Code Llama model proved to be more effective for this specific task. The Tiny Llama model, due to its size, could only generate fragmented code, failing to produce complete SVG strings. <br>
-** Limitation: ** Model outputs contain extraneous text and hence require a post-processing step to extract the SVG code. It takes several attempts before the model can generate a clean, valid SVG string. <br>
+**Limitation:** Model outputs contain extraneous text and hence require a post-processing step to extract the SVG code. It takes several attempts before the model can generate a clean, valid SVG string. <br>
 Example: <br>
 text description: a cat on a beach <br>
 generated SVG: <br>
