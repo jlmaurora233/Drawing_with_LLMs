@@ -19,5 +19,5 @@ Despite the higher perplexity, the fine-tuned Code Llama model proved to be more
 ** Limitation: ** Model outputs contain extraneous text and hence require a post-processing step to extract the SVG code. It takes several attempts before the model can generate a clean, valid SVG string. <br>
 Example: <br>
 text description: a cat on a beach <br>
-generated SVG: ![cat on a beach](/Users/jianglimeng/Desktop/drawing_with_llms/output.svg)
+generated SVG: ![cat on a beach]((https://github.com/jlmaurora233/Drawing_with_LLMs/blob/main/api/output.svg))
 
